@@ -23,4 +23,6 @@ class Entry(models.Model):
     
     def __str__(self):
         """返回模型的字符串表示"""
+        if len(self.text) <= 50:
+            return f"{self.text[:]}"
         return f"{self.text[:50]}..."
